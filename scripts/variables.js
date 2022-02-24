@@ -12,3 +12,4 @@ export const puntajePc = document.querySelector('.puntaje-right').children;
 export const counter_rondas = document.getElementById('rondas');
 export const boton_reiniciar = document.querySelector('.reiniciar');
 export let nivelesGame = document.getElementById('container-puntos__nivel')
+

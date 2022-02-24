@@ -1,8 +1,7 @@
 import {containerGame,niveles_button,start_button,h1,modal,manos,manoUserDOM,manoPcDOM,puntajeUser,puntajePc,counter_rondas,boton_reiniciar, nivelesGame} from './variables.js';
 
-let rondas = 0;
-let rondaUser = 0;
-let rondaPc = 0;
+let rondas = 0, rondaUser = 0, rondaPc = 0;
+// variables sin inicializar
 let randomNumber;
 let numeroAdivinador;
 
@@ -206,10 +205,17 @@ start_button.addEventListener('click',()=>{
 function opacityFull(){
 	manoPcDOM.style.opacity = '1';
 	manoUserDOM.style.opacity = '1';
+	for(let mano of manos){
+		mano.style.display = "none"
+	}
+
 }
 function opacityOff(){
 	manoPcDOM.style.opacity = '0.5';
 	manoUserDOM.style.opacity = '0.5';
+	for(let mano of manos){
+		mano.style.display = "block"
+	}
 }
 
 function addPuntosJugador(){
@@ -234,9 +240,9 @@ function addPuntoPc(){
 	}
 }
 
-manos.forEach(element => {
-	element.addEventListener('click',()=>{
-		let url = element.getAttribute('src');
+manos.forEach(mano => {
+	mano.addEventListener('click',()=>{
+		let url = mano.getAttribute('src');
 		if(niveles_button.selectedIndex == 0){
 			nivelesGame.textContent = 'nivel: facil';
 			if(url === './assets/papel-circle.svg') nivelFacil('papel');
@@ -255,14 +261,12 @@ function reiniciarJuego(){
 	opacityOff();
 	manoPcDOM.setAttribute('src','./assets/black-white-mano.png');
 	manoUserDOM.setAttribute('src','./assets/black-white-mano.png');
-	rondas = 0;
-	rondaUser = 0;
-	rondaPc = 0;
-	for(let i = 0; i < 4; i++){
-		puntajeUser[i].classList.remove('points-on');
+	rondas = 0, rondaUser = 0, rondaPc = 0;
+	for(let punto of puntajeUser){
+		punto.classList.remove('points-on');
 	}
-	for(let i = 0; i < 4; i++){
-		puntajePc[i].classList.remove('points-on');
+	for(let punto of puntajePc){
+		punto.classList.remove('points-on');
 	}
 	counter_rondas.textContent = `rondas: ${rondas}`;
 }
