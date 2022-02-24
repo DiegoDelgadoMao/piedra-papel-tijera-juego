@@ -1,0 +1,249 @@
+primer-color = #F8CF66
+segundo-color = #F4B0BF
+tercer-color = #A9CC8A
+cuarto-color = #FFF
+quinto-color = #D14B4B
+fuente1 = 'Arima Madurai', cursive
+fuente2 = 'Bangers', cursive
+
+*,*::before,*::after
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+html
+	font-size: 62.5%
+body
+	background: #222
+	font-family: fuente1
+.home
+	width: 100%
+	height: 100vh
+	display: flex
+	flex-direction: column
+	justify-content: space-evenly
+h1
+	font-family: fuente2
+	color: primer-color
+	font-size: 3rem
+	margin-top: 30px
+	text-align: center
+	letter-spacing: 2px
+
+	span:nth-child(1)
+		color: segundo-color
+	span:nth-child(2)
+		color: tercer-color
+
+.home-inicio
+	width: 80%
+	max-width: 40rem
+	height: 400px
+	background: #444;
+	margin: auto;
+	box-shadow: 2px 2px 12px #000000c7, -2px -2px 12px #ffffff8f
+	border-radius: 20px
+	padding: 20px 0px
+	display: flex
+	flex-direction: column
+	justify-content: center
+	&__p
+		font-size: 1.6rem
+		width: 60%
+		color: cuarto-color
+		margin: 0px 0px 30px 20px
+	#select-niveles
+		width: 12rem
+		height: 5rem
+		background: tercer-color
+		border-radius: 1.2rem
+		outline: none
+		font-size: 1.6rem
+		font-weight: 900
+		font-family: inherit
+		align-self: center
+		text-align: center
+		margin-bottom: 30px
+		color: #444
+		cursor: pointer
+	.edit-nombre
+		width: 14rem
+		align-self: center
+		height: 5rem
+		border-radius: 12px
+		display: flex
+		justify-content: space-between
+		overflow: hidden
+		background: tercer-color
+		padding-left: 20px
+		border: none
+		&__span
+			align-self: center;
+			font-size: 1.6rem;
+			font-family: fuente1;
+			font-weight: 900;
+			color: #444
+		&__pen
+			width: 30px
+			height: 100%
+			display: grid
+			place-content: center
+			background: #88a173
+		.bxs-edit-alt
+			text-shadow: 1px 1px 2px #00000093
+			font-size: 2.2rem
+			color: segundo-color
+	&__start
+		width: 140px
+		height: 50px
+		background: cuarto-color
+		border-radius: 12px
+		display: grid
+		place-content: center
+		border: none
+		align-self: center
+		margin-top: 30px
+		font-family: fuente2
+		font-size: 3rem
+		color: #444
+		cursor: pointer
+
+.container-game{
+	width: 100%
+	height: 100vh
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	padding: 10px 0px
+	display: none
+}
+
+.container-puntos{
+	width: 100%
+	display: flex
+	justify-content: space-between
+	padding: 0 30px
+	.puntos{
+		color: #fff
+		font-size: 1.3rem
+		letter-spacing: 1.2px
+		&__vs{
+			font-size: 1.6rem
+			font-weight: 900
+			color: segundo-color
+		}
+	}
+	&__infoExtra{
+		display: grid
+		.container-puntos__rondas{
+			color: primer-color
+			font-weight: 600
+			font-size: 1.3rem
+		}
+		#container-puntos__nivel{
+			color: primer-color
+			font-weight: 600
+			font-size: 1.3rem
+		}
+	}
+	.puntaje{
+		width: 100%
+		display: flex
+		justify-content: space-between
+		.points{
+			width: 10px
+			height: 10px
+			border: 1px solid #fff
+			border-radius: 10px
+			display: inline-block
+		}
+		.points-on{
+			background: tercer-color
+		}
+	}
+}
+
+.game{
+	width: 100%
+	height: 55vh
+	display: grid
+	place-items: center
+	&__jugada{
+		display: flex
+		justify-content: space-evenly
+		width: 100%
+		max-width: 500px
+		position: relative
+		img{
+			width: 10rem
+			opacity: 0.5
+		}
+	}
+	&__jugadores{
+		width: 100%
+		max-width: 400px
+		display: flex
+		font-size: 3rem
+		color: #fff
+		justify-content: space-evenly
+		font-family: fuente2
+	}
+}
+.h2-game{
+	width: 100%;
+	max-width: 500px;
+	font-size: 2rem
+	color: #fff
+	font-weight: 300
+	margin-bottom: 20px
+	margin-left: 20px
+}
+.seleccionar-manos{
+	width: 100%
+	max-width: 500px
+	margin: auto
+	display: grid
+	grid-template-columns: repeat(3,1fr)
+	place-items: center
+	img{
+		width: 7rem
+		opacity: 0.5
+		cursor: pointer
+	}
+	.seleccionar-manos__img:active{
+		opacity: 1
+		border: 3px solid #11aaff
+		border-radius: 50%
+	}
+}
+
+.reiniciar{
+	margin: auto
+	width: 14rem
+	height: 41px
+	border: none
+	border-radius: 10px
+	background: primer-color
+	display: flex
+	justify-content: space-evenly
+	align-items: center
+	cursor: pointer
+	span{
+		font-size: 1.4rem
+		font-weight: 700
+		color: #222
+	}
+	.bx-reset{
+		font-size: 2rem
+		color: #222
+	}
+}
+
+@media (min-width: 600px){
+	html{
+		font-size: 70%
+	}
+	.h2-game{
+		margin-left: 0px
+		margin: auto
+	}
+}

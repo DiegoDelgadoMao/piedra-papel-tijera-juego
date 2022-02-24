@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Juego de piedra papel o tijera en la web. Hecho solo con fines educativos,no por fines lucrativos! espero te guste">
+	<meta name="author" content="Diego Mauricio Delgado">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@100;200;300;400;500;700;800;900&family=Bangers&display=swap" rel="stylesheet">
+	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="./styles/main.css">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-KGL8WPPPG5"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-KGL8WPPPG5');
+	</script>
+	<title>Piedra, papel o tijeras - Juego</title>
+</head>
+<body class="home">
+	<h1 class="home__h1">piedra, <span>papel</span> <span>o tijera</span></h1>
+	<main class="home-inicio">
+		<p class="home-inicio__p">Escoje el nivel de dificultad</p>
+		<select name="niveles" id="select-niveles">
+			<option value="normal">normal</option>
+			<option value="dificil">dificil</option>
+		</select>
+		<p class="home-inicio__p">Escribe tu nombre:</p>
+		<button class="edit-nombre">
+			<span class="edit-nombre__span">Usuario1</span>
+			<div class="edit-nombre__pen">
+				<i class='bx bxs-edit-alt'></i>
+			</div>
+		</button>
+		<button class="home-inicio__start">Iniciar</button>
+	</main>
+	<div class="container-game">
+		<header class="container-puntos">
+			<div class="puntos">
+				<div>
+					<span id="name-user" class="puntos__user">usuario1</span>
+					<span class="puntos__vs">VS</span>
+					<span class="puntos__pc">computadora</span>
+				</div>
+				<div class="puntaje">
+					<div class="puntaje-left">
+						<!-- points -on: avtiva el fondo verde -->
+						<div class="points"></div>
+						<div class="points"></div>
+						<div class="points"></div>
+						<div class="points fin"></div>
+					</div>
+					<div class="puntaje-right">
+						<div class="points"></div>
+						<div class="points"></div>
+						<div class="points"></div>
+						<div class="points fin"></div>
+					</div>
+				</div>
+			</div>
+			<div class="container-puntos__infoExtra">
+				<p id="rondas" class="container-puntos__rondas">rondas 0</p>
+				<p id="container-puntos__nivel">nivel: ...</p>
+			</div>
+		</header>
+		<section class="game">
+			<div class="game__jugada">
+				<img id="game-mano-user" src="./assets/black-white-mano.png" alt="">
+				<img id="game-mano-pc" src="./assets/black-white-mano.png" alt="">
+			</div>
+			<div class="game__jugadores">
+				<p class="game-jugadores__nombres game-jugadores__nombres--usuario">usuario1</p>
+				<span>VS</span>
+				<p class="game-jugadores__nombres">computadora</p>
+			</div>
+		</section>
+		<h2 class="h2-game">selecciona tu mano:</h2>
+		<section class="seleccionar-manos">
+			<img class="seleccionar-manos__img" src="./assets/tijera-circle.svg" alt="">
+			<img class="seleccionar-manos__img" src="./assets/piedra-circle.svg" alt="">
+			<img class="seleccionar-manos__img" src="./assets/papel-circle.svg" alt="">
+		</section>
+		<button class="reiniciar">
+			<span>Reiniciar</span>
+			<i class='bx bx-reset'></i>
+		</button>
+	</div>
+	<script type="module" src="./scripts/main.js"></script>
+</body>
+</html>
